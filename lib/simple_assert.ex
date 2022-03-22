@@ -32,17 +32,17 @@ defmodule SimpleAssert do
 
   ## Examples
 
-      iex> SimpleAssert.exists_false(false)
+      iex> SimpleAssert.assert_false(false)
       :ok
 
-      iex> SimpleAssert.exists_false(nil)
+      iex> SimpleAssert.assert_false(nil)
       :ok
 
-      iex> SimpleAssert.exists_false(:unexpected_result)
+      iex> SimpleAssert.assert_false(:unexpected_result)
       ** (ArgumentError) assertion failed!
   """
-  @spec exists_false(any()) :: :ok | none()
-  def exists_false(e) do
+  @spec assert_false(any()) :: :ok | none()
+  def assert_false(e) do
     cond do
       e == false -> :ok
       e == nil -> :ok
