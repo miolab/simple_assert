@@ -24,4 +24,29 @@ defmodule SimpleAssert do
       raise ArgumentError, "assertion failed!"
     end
   end
+
+  @doc """
+  Asserts the `e` is `false` or `nil`.
+
+  If it succeeds, it returns `:ok`. Raises an error otherwise.
+
+  ## Examples
+
+      iex> SimpleAssert.exists_false(false)
+      :ok
+
+      iex> SimpleAssert.exists_false(nil)
+      :ok
+
+      iex> SimpleAssert.exists_false(:unexpected_result)
+      ** (ArgumentError) assertion failed!
+  """
+  @spec exists_false(any()) :: :ok | none()
+  def exists_false(e) do
+    cond do
+      e == false -> :ok
+      e == nil -> :ok
+      true -> raise ArgumentError, "assertion failed!"
+    end
+  end
 end
