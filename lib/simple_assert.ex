@@ -1,6 +1,6 @@
 defmodule SimpleAssert do
   @moduledoc """
-  Documentation for `SimpleAssert`.
+  SimpleAssert asserts the given parameter is `true` or `false`.
   """
 
   @doc """

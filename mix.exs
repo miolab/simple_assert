@@ -2,7 +2,7 @@ defmodule SimpleAssert.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/miolab/simple_assert"
-  @version "0.1.0-dev"
+  @version "0.1.0"
 
   def project do
     [
@@ -11,7 +11,9 @@ defmodule SimpleAssert.MixProject do
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      docs: docs()
+      docs: docs(),
+      description: "SimpleAssert asserts the given parameter is true or false.",
+      package: package()
     ]
   end
 
@@ -36,6 +38,14 @@ defmodule SimpleAssert.MixProject do
       main: "SimpleAssert",
       source_ref: "v#{@version}",
       source_url: @source_url
+    ]
+  end
+
+  defp package do
+    [
+      maintainers: ["imaima"],
+      licenses: ["Apache-2.0"],
+      links: %{"GitHub" => @source_url}
     ]
   end
 end

@@ -1,5 +1,9 @@
 # SimpleAssert
 
+SimpleAssert asserts the given parameter is `true` or `false`.
+
+In future, we will implement the type checking features.
+
 ## versions
 
 ```
@@ -8,8 +12,6 @@ Erlang/OTP 24 [erts-12.1.5] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threa
 
 Elixir 1.12.3 (compiled with Erlang/OTP 24)
 ```
-
-**TODO: Add description**
 
 ## Installation
 
