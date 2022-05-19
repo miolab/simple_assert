@@ -10,14 +10,14 @@ defmodule SimpleAssert do
 
   ## Examples
 
-      iex> SimpleAssert.assert(1 == 1)
+      iex> SimpleAssert.assert_true(1 == 1)
       :ok
 
-      iex> SimpleAssert.assert(1 == 2)
+      iex> SimpleAssert.assert_true(1 == 2)
       ** (ArgumentError) assertion failed!
   """
-  @spec assert(boolean()) :: :ok | none()
-  def assert(e) do
+  @spec assert_true(boolean()) :: :ok | none()
+  def assert_true(e) do
     if e do
       :ok
     else
