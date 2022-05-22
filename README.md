@@ -1,6 +1,8 @@
 # SimpleAssert
 
 ![example workflow](https://github.com/miolab/simple_assert/actions/workflows/ci.yml/badge.svg)
+[![hex.pm version](https://img.shields.io/hexpm/v/simple_assert.svg)](https://hex.pm/packages/simple_assert)
+[![hex.pm](https://img.shields.io/hexpm/l/simple_assert.svg)](https://github.com/miolab/simple_assert/blob/master/LICENSE)
 
 SimpleAssert asserts the given parameter is `true` or `false`.
 
