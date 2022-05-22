@@ -1,5 +1,7 @@
 # SimpleAssert
 
+![example workflow](https://github.com/miolab/simple_assert/actions/workflows/ci.yml/badge.svg)
+
 SimpleAssert asserts the given parameter is `true` or `false`.
 
 In future, we will implement the type checking features.
