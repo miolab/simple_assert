@@ -1,6 +1,8 @@
 # SimpleAssert
 
 ![example workflow](https://github.com/miolab/simple_assert/actions/workflows/ci.yml/badge.svg)
+[![hex.pm version](https://img.shields.io/hexpm/v/simple_assert.svg)](https://hex.pm/packages/simple_assert)
+[![hex.pm](https://img.shields.io/hexpm/l/simple_assert.svg)](https://github.com/miolab/simple_assert/blob/master/LICENSE)
 
 SimpleAssert asserts the given parameter is `true` or `false`.
 
@@ -17,19 +19,28 @@ Elixir 1.12.3 (compiled with Erlang/OTP 24)
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+In order to use `SimpleAssert`, you will need to install Elixir.
+
+Then create an Elixir project via the mix build tool:
+
+```
+% mix new my_app
+```
+
+Then the package can be installed
 by adding `simple_assert` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:simple_assert, "~> 0.1.0"}
+    {:simple_assert, "~> 0.2.0"}
   ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
+## More information
+
+The docs can
 be found at [https://hexdocs.pm/simple_assert](https://hexdocs.pm/simple_assert).
 
 ## LICENSE
