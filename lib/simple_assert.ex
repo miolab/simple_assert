@@ -17,13 +17,11 @@ defmodule SimpleAssert do
       ** (ArgumentError) assertion failed!
   """
   @spec assert_true(boolean()) :: :ok | none()
-  def assert_true(e) do
-    if e do
-      :ok
-    else
-      raise ArgumentError, "assertion failed!"
-    end
-  end
+  def assert_true(e)
+
+  def assert_true(true), do: :ok
+
+  def assert_true(_), do: raise(ArgumentError, "assertion failed!")
 
   @doc """
   Asserts the `e` is `false` or `nil`.
@@ -42,11 +40,11 @@ defmodule SimpleAssert do
       ** (ArgumentError) assertion failed!
   """
   @spec assert_false(any()) :: :ok | none()
-  def assert_false(e) do
-    cond do
-      e == false -> :ok
-      e == nil -> :ok
-      true -> raise ArgumentError, "assertion failed!"
-    end
-  end
+  def assert_false(e)
+
+  def assert_false(false), do: :ok
+
+  def assert_false(nil), do: :ok
+
+  def assert_false(_), do: raise(ArgumentError, "assertion failed!")
 end
