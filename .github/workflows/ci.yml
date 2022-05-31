@@ -112,3 +112,38 @@ jobs:
           mix deps.compile --only-deps
       - name: Mix Test
         run: mix test
+  mix-format:
+    name: Mix Format Check
+    needs: setup
+    strategy:
+      matrix:
+        os: [ubuntu-20.04]
+        otp-version: ['24.x']
+        elixir-version: [1.12.x]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup beam
+        uses: erlef/setup-beam@v1
+        with:
+          otp-version: ${{ matrix.otp-version }}
+          elixir-version: ${{ matrix.elixir-version }}
+      - name: Retrieve cached Elixir setup
+        uses: actions/cache@v3
+        id: cache-elixir
+        with:
+          path: |
+            deps
+            _build
+            priv/plts
+          key: |
+            ${{ runner.os }}-${{ matrix.otp-version }}-${{ matrix.elixir-version }}-${{ hashFiles('mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-
+      - name: Mix deps.get
+        run: |
+          mix deps.get
+          mix deps.compile --only-deps
+      - name: Mix Format Check
+        run: mix format --check-formatted
