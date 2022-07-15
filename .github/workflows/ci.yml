@@ -71,10 +71,6 @@ jobs:
             ${{ runner.os }}-${{ matrix.otp-version }}-${{ matrix.elixir-version }}-${{ hashFiles('mix.lock') }}
           restore-keys: |
             ${{ runner.os }}-mix-
-      - name: Mix deps.get
-        run: |
-          mix deps.get
-          mix deps.compile --only-deps
       - name: Mix Dialyzer
         run: mix dialyzer
   mix-test:
@@ -106,10 +102,6 @@ jobs:
             ${{ runner.os }}-${{ matrix.otp-version }}-${{ matrix.elixir-version }}-${{ hashFiles('mix.lock') }}
           restore-keys: |
             ${{ runner.os }}-mix-
-      - name: Mix deps.get
-        run: |
-          mix deps.get
-          mix deps.compile --only-deps
       - name: Mix Test
         run: mix test
   mix-format:
@@ -141,9 +133,5 @@ jobs:
             ${{ runner.os }}-${{ matrix.otp-version }}-${{ matrix.elixir-version }}-${{ hashFiles('mix.lock') }}
           restore-keys: |
             ${{ runner.os }}-mix-
-      - name: Mix deps.get
-        run: |
-          mix deps.get
-          mix deps.compile --only-deps
       - name: Mix Format Check
         run: mix format --check-formatted
